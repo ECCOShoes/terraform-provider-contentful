@@ -1,0 +1,18 @@
+version: "2"
+
+linters:
+  enable:
+    - misspell
+    - unconvert
+    - unparam
+  exclusions:
+    rules:
+      # Acceptance test helpers intentionally read many environment variables.
+      - path: _test\.go
+        linters:
+          - unparam
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
